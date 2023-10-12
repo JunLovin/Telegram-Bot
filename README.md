@@ -1,2 +1,2 @@
 # Telegram-Bot
-Telegram bot for FuXion page
+Telegram bot for FuXion web app
