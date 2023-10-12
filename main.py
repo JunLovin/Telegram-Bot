@@ -15,6 +15,12 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
 async def custom_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('Este es un comando personalizado')
+    
+async def info_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text('Soy un bot creado por @junlovin y mi deber es ayudar a todas las personas que están interesadas en FuXion')
+    
+async def catalogo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text('Espera un momento por favor hasta que te envío el catálogo...')
 
 
 # Responses
