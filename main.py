@@ -7,6 +7,9 @@ BOT_USERNAME: Final = '@Fuxionbot'
 
 
 # Commands
+async def iniciar_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text('¡Bienvenido! Espero que mi ayuda sea de tu agrado. Si eres nuevo en el tema de FuXion déjame presentar a nuestra empresa rápidamente.\nFuxion es un empresa internacional la cual brinda de productos nutracéuticos, esto quiere decir que todos nuestros productos son totalmente orgánicos y no tienen ningún tipo de preservante o químico dañino para el cuerpo.\n\nPuedes escribir los siguientes comandos para saber más de los productos y de la empresa:\n\n/start - Te da una mini información de la empresa y te muestra todos los comandos existentes.\n/iniciar - Te da una bienvenida a FuXion y me presento.\n\n𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐜𝐢𝐨́𝐧\n/info - Te doy información acerca de mí, de mi propósito y de mi creador.\n/catalogo - Te manda un link de Google Drive en el cual está todo el catálogo de los productos FuXion con sus precios.\n/fuxion - Información acerca de la empresa y de cómo nuestros productos funcionan en el sistema humano.')
+
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('Hola! Gracias por estar interesado en FuXion, espero que te sirva mi ayuda!')
     
@@ -20,7 +23,10 @@ async def info_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('Soy un bot creado por @junlovin y mi deber es ayudar a todas las personas que están interesadas en nuestra empresa!')
     
 async def catalogo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text('Puedes encontrar el catálogo de FuXion con todos los precios aquí: https://drive.google.com/file/d/1HZvBch3Uv7vLcS6ZhA-uExnKfbyL2Ivy/view')
+    await update.message.reply_text('Puedes encontrar todos los productos FuXion con los precios aquí: https://drive.google.com/file/d/1HZvBch3Uv7vLcS6ZhA-uExnKfbyL2Ivy/view')
+
+async def fuxion_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text('Somos FuXion Biotech SAC una compañía multinacional, establecida en 2006, que cambia la vida de las personas, con su particular forma de ver el mundo.\n\nFuXion® investiga, desarrolla y produce alimentos nutracéuticos únicos que ayudan a alcanzar el máximo potencial de salud en el organismo; y los comercializa a través de distribuidores independientes, brindándoles la oportunidad de tener un negocio propio que va de la mano con un sostenido crecimiento personal y financiero.\n\nEstamos en 14 países.')
 
 
 # Responses
@@ -67,11 +73,13 @@ if __name__ == '__main__':
     app = Application.builder().token(TOKEN).build()
     
     # Commands
+    app.add_handler(CommandHandler('start', iniciar_command))
     app.add_handler(CommandHandler('iniciar', start_command))
     app.add_handler(CommandHandler('ayuda', help_command))
     app.add_handler(CommandHandler('personalizado', custom_command))
     app.add_handler(CommandHandler('catalogo', catalogo_command))
     app.add_handler(CommandHandler('info', info_command))
+    app.add_handler(CommandHandler('fuxion', fuxion_command))
     
     # Messages
     app.add_handler(MessageHandler(filters.TEXT, handle_message))
