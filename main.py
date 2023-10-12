@@ -17,10 +17,10 @@ async def custom_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('Este es un comando personalizado')
     
 async def info_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text('Soy un bot creado por @junlovin y mi deber es ayudar a todas las personas que están interesadas en FuXion')
+    await update.message.reply_text('Soy un bot creado por @junlovin y mi deber es ayudar a todas las personas que están interesadas en nuestra empresa!')
     
 async def catalogo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text('Espera un momento por favor hasta que te envío el catálogo...')
+    await update.message.reply_text('Puedes encontrar el catálogo de FuXion con todos los precios aquí: https://drive.google.com/file/d/1HZvBch3Uv7vLcS6ZhA-uExnKfbyL2Ivy/view')
 
 
 # Responses
@@ -70,6 +70,8 @@ if __name__ == '__main__':
     app.add_handler(CommandHandler('iniciar', start_command))
     app.add_handler(CommandHandler('ayuda', help_command))
     app.add_handler(CommandHandler('personalizado', custom_command))
+    app.add_handler(CommandHandler('catalogo', catalogo_command))
+    app.add_handler(CommandHandler('info', info_command))
     
     # Messages
     app.add_handler(MessageHandler(filters.TEXT, handle_message))
