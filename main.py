@@ -18,7 +18,21 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
 async def custom_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('Este es un comando personalizado')
+    
+async def info_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text('Soy un bot creado por @junlovin y mi deber es ayudar a todas las personas que están interesadas en nuestra empresa!')
+    
+async def catalogo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text('Puedes encontrar todos los productos FuXion con los precios aquí: https://drive.google.com/file/d/1HZvBch3Uv7vLcS6ZhA-uExnKfbyL2Ivy/view')
 
+async def fuxion_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text('Somos FuXion Biotech SAC una compañía multinacional, establecida en 2006, que cambia la vida de las personas, con su particular forma de ver el mundo.\n\nFuXion® investiga, desarrolla y produce alimentos nutracéuticos únicos que ayudan a alcanzar el máximo potencial de salud en el organismo; y los comercializa a través de distribuidores independientes, brindándoles la oportunidad de tener un negocio propio que va de la mano con un sostenido crecimiento personal y financiero.\n\nEstamos en 14 países.')
+
+async def nutraceutico_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text('Un producto "nutracéutico" son productos basados en ingredientes procedentes de la propia naturaleza (animales, plantas o minerales) y se caracterizan por ser ricos en determina- dos nutrientes, lo cual determina su incidencia en la nutrición y en nuestra salud.')
+
+async def buy_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text('Si deseas realizar una compra, por favor tienes que enviar captura del producto que desea adquirir a @junlovin y depositar o hacer una transferencia a: \n\nPRODUBANCO\nNombre: RENDON RUIZ MATHIAS SAID\nCTA Ahorros 20060055373\nCI: 1729224558\nCorreo: mathiassaid7@outlook.es')
 
 # Responses
 
