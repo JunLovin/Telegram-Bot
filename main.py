@@ -32,7 +32,7 @@ async def nutraceutico_command(update: Update, context: ContextTypes.DEFAULT_TYP
     await update.message.reply_text('Un producto "nutracéutico" son productos basados en ingredientes procedentes de la propia naturaleza (animales, plantas o minerales) y se caracterizan por ser ricos en determina- dos nutrientes, lo cual determina su incidencia en la nutrición y en nuestra salud.')
 
 async def buy_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text('Si deseas realizar una compra, por favor tienes que enviar captura del producto que desea adquirir a @junlovin y depositar o hacer una transferencia a: \n\nPRODUBANCO\nNombre: RENDON RUIZ MATHIAS SAID\nCTA Ahorros 20060055373\nCI: 1729224558\nCorreo: mathiassaid7@outlook.es\nNúmero: +593 0989505046')
+    await update.message.reply_text('Si deseas realizar una compra, por favor tienes que enviar captura del producto que desea adquirir a @junlovin o a @EithelRendon y depositar o hacer una transferencia a cualquiera de las siguientes cuentas: \n\nPRODUBANCO\nNombre: RENDON RUIZ MATHIAS SAID\nCTA Ahorros 20060055373\nCI: 1729224558\nCorreo: mathiassaid7@outlook.es\nNúmero: +593 0989505046\n\nBANCO GUAYAQUIL\nNombre: RENDON RUIZ EITHEL SNYDER\nCTA Ahorros 0016216407\nCI: 1729711539\nCorreo: eithelrendon@gmail.com\nNúmero: +593 0988843964')
 
 # Responses
 
