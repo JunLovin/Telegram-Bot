@@ -86,6 +86,7 @@ if __name__ == '__main__':
     app.add_handler(CommandHandler('info', info_command))
     app.add_handler(CommandHandler('fuxion', fuxion_command))
     app.add_handler(CommandHandler('nutraceutico', nutraceutico_command))
+    app.add_handler(CommandHandler('comprar', buy_command))
     
     # Messages
     app.add_handler(MessageHandler(filters.TEXT, handle_message))
