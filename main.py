@@ -7,6 +7,9 @@ BOT_USERNAME: Final = '@Fuxionbot'
 
 
 # Commands
+async def iniciar_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text('¡Bienvenido! Espero que mi ayuda sea de tu agrado. Si eres nuevo en el tema de FuXion déjame presentar a nuestra empresa rápidamente.\nFuxion es un empresa internacional la cual brinda de productos nutracéuticos, esto quiere decir que todos nuestros productos son totalmente orgánicos y no tienen ningún tipo de preservante o químico dañino para el cuerpo.\n\nPuedes escribir los siguientes comandos para saber más de los productos y de la empresa:\n\n/start - Te da una mini información de la empresa y te muestra todos los comandos existentes.\n/iniciar - Te da una bienvenida a FuXion y me presento.\n\n𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐜𝐢𝐨́𝐧\n/info - Te doy información acerca de mí, de mi propósito y de mi creador.\n/catalogo - Te manda un link de Google Drive en el cual está todo el catálogo de los productos FuXion con sus precios.\n/fuxion - Información acerca de la empresa y de cómo nuestros productos funcionan en el sistema humano.\n/nutraceutico - Te da un resumen de lo que son los productos nutracéuticos.')
+
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('Hola! Gracias por estar interesado en FuXion, espero que te sirva mi ayuda!')
     
@@ -15,16 +18,6 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
 async def custom_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('Este es un comando personalizado')
-    
-async def info_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text('Soy un bot creado por @junlovin y mi deber es ayudar a todas las personas que están interesadas en FuXion')
-    
-async def catalogo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text('Espera un momento por favor hasta que te envío el catálogo...')
-    
-async def buy_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text('Si deseas realizar una compra, por favor tienes que enviar captura del producto que desea adquirir a @junlovin y depositar o hacer una transferencia a: \n\nPRODUBANCO\nNombre: RENDON RUIZ MATHIAS SAID\nCTA Ahorros 20060055373\nCI: 1729224558\nCorreo: mathiassaid7@outlook.es')
-
 
 
 # Responses
@@ -71,9 +64,14 @@ if __name__ == '__main__':
     app = Application.builder().token(TOKEN).build()
     
     # Commands
+    app.add_handler(CommandHandler('start', iniciar_command))
     app.add_handler(CommandHandler('iniciar', start_command))
     app.add_handler(CommandHandler('ayuda', help_command))
     app.add_handler(CommandHandler('personalizado', custom_command))
+    app.add_handler(CommandHandler('catalogo', catalogo_command))
+    app.add_handler(CommandHandler('info', info_command))
+    app.add_handler(CommandHandler('fuxion', fuxion_command))
+    app.add_handler(CommandHandler('nutraceutico', nutraceutico_command))
     
     # Messages
     app.add_handler(MessageHandler(filters.TEXT, handle_message))
