@@ -21,6 +21,10 @@ async def info_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
 async def catalogo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('Espera un momento por favor hasta que te envío el catálogo...')
+    
+async def buy_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text('Si deseas realizar una compra, por favor tienes que enviar captura del producto que desea adquirir a @junlovin y depositar o hacer una transferencia a: \n\nPRODUBANCO\nNombre: RENDON RUIZ MATHIAS SAID\nCTA Ahorros 20060055373\nCI: 1729224558\nCorreo: mathiassaid7@outlook.es')
+
 
 
 # Responses
